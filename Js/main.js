@@ -94,11 +94,9 @@ function desktop() {
 
   //now on hover show menu
 
-  const hiddenNavContainer = document.querySelector(".hidden-nav");
+  const hiddenNavContainer = document.querySelector("header");
 
-  hiddenNavContainer.addEventListener("mouseover", () => {
-    hiddenNavContainer.style.pointerEvents = "auto";
-    hiddenNavContainer.style.width = "100%";
+  hiddenNavContainer.addEventListener("mouseenter", () => {
 
     gsap.to(hiddenNav, {
       scale: 0,
@@ -130,7 +128,6 @@ function desktop() {
   });
 
   hiddenNavContainer.addEventListener("mouseleave", () => {
-    hiddenNavContainer.style.pointerEvents = "none";
     hiddenNavContainer.style.width = "";
 
     gsap.to(hiddenNav, {
