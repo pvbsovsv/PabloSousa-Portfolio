@@ -1,0 +1,480 @@
+:root {
+  --header-height: 15vh;
+}
+
+
+span {
+  display: inline-block; /* for gsap animation */
+}
+
+body {
+  font-family: "Zalando Sans SemiExpanded", Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background-color: #e1e3da;
+  color: #1c1c1c;
+}
+
+main {
+  padding: 30px 15px;
+}
+
+/* top nav ----- */
+
+header {
+  font-family: "Lekton";
+  height: var(--header-height);
+  padding: 30px 15px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  line-height: 1.4;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  padding: 0px 15px;
+  font-size: 1rem;
+  z-index: 1000;
+
+  /* difference blend */
+
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.top-nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.top-nav {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.brand-logo {
+  font-family: "Zalando Sans Expanded";
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.contact-btn-container {
+  display: flex;
+  align-items: start;
+  align-self: center;
+  padding-bottom: 22px;
+}
+
+.contact-btn-container span > img {
+  height: 20px;
+  width: auto;
+  filter: invert(); /* makes it black */
+  transform: scaleY(-1);
+  margin-right: 5px;
+}
+
+.contact-btn-container span {
+  transform: rotate(-90deg);
+  font-size: 1.3rem;
+  font-weight: 550;
+  text-transform: uppercase;
+}
+
+/*  animation elements */
+
+.hidden-nav {
+  position: absolute;
+  list-style-type: none;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 0px;
+  top: 0;
+}
+
+.hidden-nav > li {
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 2.5px;
+  background-color: white;
+  margin: 8px 0px;
+}
+
+/* hero section ----- */
+
+.hero-container {
+  width: 100%;
+  margin: 0px;
+  margin-top: 15vh;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  padding-top: 35px;
+}
+
+.hero-container h1 > span {
+  font-size: 5rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.hero-container h1 {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 85%;
+  
+
+}
+
+
+
+
+.hero-container h1 > span:first-of-type {
+  color: #898b85;
+}
+
+.slide-footer {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slide-footer span {
+  text-transform: uppercase;
+  font-family: "Lekton";
+  font-size: 0.85rem;
+}
+
+.slide-footer span::before {
+  content: "[";
+}
+
+.slide-footer span::after {
+  content: "]";
+}
+
+/* about section ----- */
+
+#about-container {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
+}
+
+
+.about-text {
+  width: 100%;
+  height: 100%;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-hb{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+
+} 
+
+
+.about-header{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+
+.about-header span {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 550;
+  flex: 0 0 auto;
+}
+
+.about-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.about-buttons button {
+  border: solid 1px #1c1c1c;
+  background-color: #ffffff00;
+  text-transform: uppercase;
+  font-weight: 550;
+  border-radius: 0px;
+  color: #1c1c1c;
+  padding: 4px;
+  font-size: 1rem;
+  flex: 0 0 auto;
+
+}
+
+
+
+.about-text div > span:nth-of-type(2) {
+  color: #898b85;
+}
+
+
+
+.about-paragraph {
+  font-family: "Lekton";
+  text-transform: uppercase;
+  text-align: end;
+  min-width: 55%;
+  max-width: 55%;
+  align-self: flex-end;
+  line-height: 2;
+  font-size: 1.25rem;
+  display: inline-block !important;
+}
+
+
+/*  classes for gsap animation */
+.about-text-two {
+  flex-direction: row; /* switch layout from column → row */
+}
+
+.about-hb-two {
+  flex-direction: column; /* stack buttons vertically */
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+
+.about-paragraph-two {
+  margin-top: 50px;
+  align-self: flex-start; /* moves paragraph down in new layout */
+}
+
+/* skills section  */
+
+#skills-container {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 85vh;
+}
+
+.big-sentence-container {
+  height: 40%;
+  overflow: hidden;
+  margin-left: -60px;
+  margin-right: -60px;
+  position: relative;
+  
+}
+
+.big-sentence {
+  font-size: 14rem;
+  font-weight: 550;
+  text-transform: capitalize;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+
+}
+
+.skills-text {
+  width: 80%;
+  align-self: center;
+}
+
+.skills-text p {
+  font-family: "Lekton";
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2;
+  font-size: 1.25rem;
+}
+
+/* work section ----- */
+
+/* inside */
+
+.work-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-fixed-text {
+  font-family: "Lekton";
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 2;
+  width: 35%;
+  margin-right: 50px;
+  position: sticky;
+  top: calc(var(--header-height) + 40px);
+  align-self: flex-start;
+}
+
+
+.work-scrollable{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+
+.work-project {
+  display: flex;
+  margin: 75px 0px;
+  justify-content: space-between;
+}
+
+.project-image{
+  width: 400px;
+} 
+
+.work-project ul {
+  list-style: none;
+  line-height: 2;
+  font-family: 'lekton';
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* footer  ----- */
+
+footer {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'lekton';
+  padding-bottom: 10px;
+
+}
+
+
+footer h4 {
+  font-family: "Zalando Sans SemiExpanded";
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+#footer-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex:0.25; 
+}
+
+#footer-navigation ul {
+  list-style-type: none;
+  font-size: 2.5rem;
+  margin: 0px 0px;
+  padding: 0px;
+
+}
+
+
+#footer-navigation ul li {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 38px;
+  width: fit-content;
+  margin: 12.5px 0px ;
+}
+#footer-navigation ul li:last-of-type {
+
+  margin:0px ;
+}
+
+#footer-navigation ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+
+}
+
+.footer-main {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.footer-main > div:first-of-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-main >div:first-of-type > div:first-of-type {
+  width: 90%;
+}
+
+.footer-contacts {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer-contacts div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 30px;
+  text-transform: uppercase;
+
+}
+
+.footer-contacts div a {
+  text-decoration: none;
+  color: white;
+
+}
+
+.footer-alt-text {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  font-family: 'lekton';
+  text-transform: uppercase;
+  border-top: solid 1px white;
+  padding-top: 10px;
+  
+}
+
+.footer-alt-text div {
+  margin: 2px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+}
+
+
