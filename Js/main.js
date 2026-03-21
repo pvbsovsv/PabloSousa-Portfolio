@@ -362,7 +362,8 @@ function desktop() {
         duration:1, 
         scrollTo: {
           y:target, 
-          offsetY: 50
+          offsetY: 50, 
+          autoKill: true
         }, 
         ease:"power2.inOut"
       })
