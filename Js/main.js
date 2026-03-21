@@ -1,6 +1,7 @@
 //register scroll trigger
 
-gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin, SplitText, Flip);
+gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin, SplitText, Flip, ScrollToPlugin);
+
 
 //Match-media > device = related animation
 
@@ -347,6 +348,26 @@ function desktop() {
       });
     });
   });
+
+
+  //Scroll To Footer
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", (e)=> {
+      e.preventDefault()
+
+      const target = link.getAttribute("href"); 
+
+      gsap.to(window, {
+        duration:1, 
+        scrollTo: {
+          y:target, 
+          offsetY: 50
+        }, 
+        ease:"power2.inOut"
+      })
+    })
+  })
 
   //clock function
 

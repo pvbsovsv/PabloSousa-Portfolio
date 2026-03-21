@@ -313,7 +313,7 @@ header {
 
 /* inside */
 
-.work-content {
+#work-content {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -329,6 +329,7 @@ header {
   position: sticky;
   top: calc(var(--header-height) + 40px);
   align-self: flex-start;
+  padding: 60px;
 }
 
 
@@ -336,6 +337,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 55%;
+  padding-right: 60px;
 }
 
 .work-project {
