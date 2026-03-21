@@ -1,7 +1,12 @@
 //register scroll trigger
 
-gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin, SplitText, Flip, ScrollToPlugin);
-
+gsap.registerPlugin(
+  ScrollTrigger,
+  ScrambleTextPlugin,
+  SplitText,
+  Flip,
+  ScrollToPlugin,
+);
 
 //Match-media > device = related animation
 
@@ -25,7 +30,7 @@ function desktop() {
   //elements
   const navContainer = document.querySelector(".top-nav-container");
   const navLinks = document.querySelector(".top-nav");
-  const navLinksEach = document.querySelectorAll(".top-nav li");
+  const navLinksEach = document.querySelectorAll(".top-nav li a");
   const logo = document.querySelector(".brand-logo");
   const hiddenNav = document.querySelectorAll(".hidden-nav li");
 
@@ -92,6 +97,7 @@ function desktop() {
   const hiddenNavContainer = document.querySelector(".hidden-nav");
 
   hiddenNavContainer.addEventListener("mouseover", () => {
+    hiddenNavContainer.style.pointerEvents = "auto";
     hiddenNavContainer.style.width = "100%";
 
     gsap.to(hiddenNav, {
@@ -124,6 +130,7 @@ function desktop() {
   });
 
   hiddenNavContainer.addEventListener("mouseleave", () => {
+    hiddenNavContainer.style.pointerEvents = "none";
     hiddenNavContainer.style.width = "";
 
     gsap.to(hiddenNav, {
@@ -349,26 +356,25 @@ function desktop() {
     });
   });
 
+  //Scroll To
 
-  //Scroll To Footer
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
 
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", (e)=> {
-      e.preventDefault()
-
-      const target = link.getAttribute("href"); 
+      const target = link.getAttribute("href");
 
       gsap.to(window, {
-        duration:1, 
+        duration: 1,
         scrollTo: {
-          y:target, 
-          offsetY: 50, 
-          autoKill: true
-        }, 
-        ease:"power2.inOut"
-      })
-    })
-  })
+          y: target,
+          offsetY: 30,
+          autoKill: true,
+        },
+        ease: "power2.inOut",
+      });
+    });
+  });
 
   //clock function
 
