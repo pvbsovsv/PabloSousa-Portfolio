@@ -154,7 +154,7 @@ function desktop() {
     ".hero-container .slide-footer span",
   );
 
-  arrScramble = [...scrambleSentences];
+  const arrScramble = [...scrambleSentences];
 
   const tlHeroScramble = gsap.timeline({
     id: "hero-scramble",
@@ -388,10 +388,6 @@ function weAreClosed() {
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-
-  setTimeout(() => seconds);
-
-  const isWeekend = day === 0 || day === 6;
 
   const target = document.getElementById("dateTime");
 
