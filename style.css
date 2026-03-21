@@ -24,7 +24,6 @@ main {
 header {
   font-family: "Lekton";
   height: var(--header-height);
-  padding: 30px 15px;
   margin-top: 25px;
   display: flex;
   flex-direction: column;
@@ -74,7 +73,7 @@ header {
 .contact-btn-container span > img {
   height: 20px;
   width: auto;
-  filter: invert(); /* makes it black */
+  filter: invert(1); /* makes it black */
   transform: scaleY(-1);
   margin-right: 5px;
 }
@@ -82,7 +81,7 @@ header {
 .contact-btn-container span {
   transform: rotate(-90deg);
   font-size: 1.3rem;
-  font-weight: 550;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -205,7 +204,7 @@ header {
 .about-header span {
   font-size: 4rem;
   text-transform: uppercase;
-  font-weight: 550;
+  font-weight: 600;
   flex: 0 0 auto;
 }
 
@@ -219,9 +218,9 @@ header {
 
 .about-buttons button {
   border: solid 1px #1c1c1c;
-  background-color: #ffffff00;
+  background-color: transparent;
   text-transform: uppercase;
-  font-weight: 550;
+  font-weight: 600;
   border-radius: 0px;
   color: #1c1c1c;
   padding: 4px;
@@ -247,7 +246,7 @@ header {
   align-self: flex-end;
   line-height: 2;
   font-size: 1.25rem;
-  display: inline-block !important;
+  display: inline-block;
 }
 
 
@@ -289,7 +288,7 @@ header {
 
 .big-sentence {
   font-size: 14rem;
-  font-weight: 550;
+  font-weight: 600;
   text-transform: capitalize;
   position: absolute;
   left: 0;
@@ -352,7 +351,7 @@ header {
 .work-project ul {
   list-style: none;
   line-height: 2;
-  font-family: 'lekton';
+  font-family: 'Lekton';
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -366,7 +365,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: 'lekton';
+  font-family: 'Lekton';
   padding-bottom: 10px;
 
 }
@@ -458,7 +457,7 @@ footer h4 {
   flex-direction: row;
   align-items: end;
   justify-content: space-between;
-  font-family: 'lekton';
+  font-family: 'Lekton';
   text-transform: uppercase;
   border-top: solid 1px white;
   padding-top: 10px;
