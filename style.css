@@ -343,6 +343,11 @@ header {
   display: flex;
   margin: 75px 0px;
   justify-content: space-between;
+  align-items: flex-start;
+}
+.work-project img{
+  margin: 0px 10px;
+
 }
 
 .project-image {
@@ -355,6 +360,8 @@ header {
   font-family: "Lekton";
   font-size: clamp(0.875rem, 1vw, 1rem);
   text-transform: uppercase;
+  padding: 10px;
+  margin: 10px;
 }
 
 /* footer  ----- */
