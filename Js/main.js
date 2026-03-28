@@ -97,7 +97,6 @@ function desktop() {
   const hiddenNavContainer = document.querySelector("header");
 
   hiddenNavContainer.addEventListener("mouseenter", () => {
-
     gsap.to(hiddenNav, {
       scale: 0,
       transformOrigin: "bottom top",
@@ -226,13 +225,17 @@ function desktop() {
 
   //listener
   gridBtnOne.addEventListener("click", () => {
+
+    //lock container height before flip effett
+    aboutContainer.style.height = aboutContainer.offsetHeight + "px";
+
     const state = Flip.getState([
       aboutContainer,
       aboutParagr,
       aboutHeaderyButtons,
       ...aboutHeaderSpans,
       ...aboutButtons,
-      ".slide-footer",
+      ".slide-footer-about"
     ]);
 
     aboutContainer.classList.toggle("about-text-two");
@@ -245,6 +248,10 @@ function desktop() {
       stagger: 0.03,
       nested: true,
       absolute: true,
+      onComplete: () => {
+      // release after animation finishes
+      aboutContainer.style.height = "";
+    },
     });
 
     //scramble
