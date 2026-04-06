@@ -364,6 +364,10 @@ header {
   margin: 10px;
 }
 
+.work-project ul li:first-of-type {
+  font-weight: 600;
+}
+
 /* footer  ----- */
 
 footer {
