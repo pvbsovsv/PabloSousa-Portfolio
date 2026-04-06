@@ -351,6 +351,7 @@ header {
 
 .project-image {
   width: 400px;
+  border-radius: 2px;
 }
 
 .work-project ul {
@@ -517,7 +518,7 @@ footer h4 {
   .big-sentence-container {
     height: 20%;
     overflow: hidden;
-    width: 95vw;
+    width: 97vw;
     margin-left: -20px;
     margin-right: -20px;
   }
@@ -539,17 +540,18 @@ footer h4 {
   }
 
   .project-image {
-    width: 75%;
+    width: 100%;
   }
 
   footer {
     padding: 20px;
   }
 
-  .footer-main {
-    flex-direction: column;
-  }
 
+ #footer-navigation {
+
+  display: none;
+ }
   .footer-contacts {
     flex-direction: column;
   }

@@ -12,9 +12,18 @@ gsap.registerPlugin(
 
 let mm = gsap.matchMedia();
 
+//mobile media query
+
+mm.add("(max-width:600px", () => {
+  mobile();
+
+  return () => {
+    killAllTweens();
+  };
+});
 //desktop media query
 
-mm.add("(min-width:301px", () => {
+mm.add("(min-width:601px", () => {
   desktop();
 
   return () => {
@@ -388,6 +397,11 @@ function desktop() {
 
   /* end of desktop */
 }
+
+function mobile() {
+
+}
+
 
 // we are open we are closed (footer)
 function weAreClosed() {
