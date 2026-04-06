@@ -16,6 +16,7 @@ let mm = gsap.matchMedia();
 
 mm.add("(max-width:600px", () => {
   mobile();
+weAreClosed();
 
   return () => {
     killAllTweens();
@@ -473,8 +474,90 @@ gsap.set(hiddenNav, {
     },
   });
 
+  //about
+
+   //gsap grid flip 1-2
+  const aboutHeaderSpans = document.querySelectorAll(".about-header span");
+  const aboutButtons = document.querySelectorAll(".about-buttons button");
+
+  //listener
+  gridBtnOne.addEventListener("click", () => {
+
+    //lock container height before flip effett
+    aboutContainer.style.height = aboutContainer.offsetHeight + "px";
+
+    const state = Flip.getState([
+      aboutContainer,
+      aboutParagr,
+      aboutHeaderyButtons,
+      ...aboutHeaderSpans,
+      ...aboutButtons,
+      ".slide-footer-about"
+    ]);
+
+    aboutContainer.classList.toggle("about-text-two");
+    aboutHeaderyButtons.classList.toggle("about-hb-two");
+    aboutParagr.classList.toggle("about-paragraph-two");
+
+    Flip.from(state, {
+      duration: 1,
+      ease: "power2.inOut",
+      stagger: 0.03,
+      nested: true,
+      absolute: true,
+      onComplete: () => {
+      // release after animation finishes
+      aboutContainer.style.height = "";
+    },
+    });
+
+    //scramble
+    gsap.to(chars, {
+      duration: 3,
+      stagger: 0.002,
+      scrambleText: {
+        text: "{original}",
+        chars: "abcdefghijklmnopqrstuvwxyz1234567890",
+      },
+    });
+  });
 
 
+  const sentenceScroll = document.querySelector(".big-sentence");
+
+  //scrol direction
+  let lastDirectionSkills = 0;
+
+  let skillsTl = gsap.timeline({ repeat: -1, yoyo: true });
+
+  // set up the infinite animation once
+  skillsTl.to(sentenceScroll, {
+    x: "-87%",
+    duration: 50,
+    ease: "none",
+    repeat: -1,
+    yoyo: true,
+  });
+
+  ScrollTrigger.create({
+    start: 0,
+    end: "max",
+    onUpdate: (self) => {
+      // check if direction changed
+      if (self.direction !== lastDirectionSkills) {
+        lastDirectionSkills = self.direction;
+
+        // reverse or play forward based on direction
+        if (self.direction === 1) {
+          // scrolling down
+          skillsTl.timeScale(1); // play forward
+        } else {
+          // scrolling up
+          skillsTl.timeScale(-1); // play backward
+        }
+      }
+    },
+  });
 
 
 

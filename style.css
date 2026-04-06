@@ -493,6 +493,10 @@ footer h4 {
     height: 50vh;
   }
 
+  .about-buttons{
+    display: none;
+  }
+
   .about-hb {
     margin-bottom: 2vh;
   }
