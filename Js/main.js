@@ -398,7 +398,85 @@ function desktop() {
   /* end of desktop */
 }
 
+//mobile animations
+
 function mobile() {
+
+//top nav click
+  
+
+//elements
+  const navContainer = document.querySelector(".top-nav-container");
+  const navLinks = document.querySelector(".top-nav");
+  const navLinksEach = document.querySelectorAll(".top-nav li a");
+  const logo = document.querySelector(".brand-logo");
+  const hiddenNav = document.querySelectorAll(".hidden-nav li");
+
+
+  //hidden
+  
+gsap.set(hiddenNav, {
+    scale: 0,
+  });
+
+  //scramble text on load page
+
+  const tlTopNavScramble = gsap.timeline();
+
+  tlTopNavScramble.to(navLinksEach, {
+    duration: 1.5,
+    scrambleText: {
+      text: "{original}",
+      chars: "abcdefghijklmnopqrstuvwxyz",
+    },
+  });
+
+  //scroll trigger global listener on scroll
+
+  let lastDirectionGlobal = 0;
+
+  ScrollTrigger.create({
+    start: 0,
+    end: "max",
+    onUpdate: (self) => {
+      if (self.direction !== lastDirectionGlobal) {
+        lastDirectionGlobal = self.direction;
+
+        gsap.to(navContainer, {
+          y: self.direction === -1 ? 0 : "-140%",
+          duration: 0.6,
+          ease: "power1.inOut",
+        });
+        gsap.to(logo, {
+          scale: self.direction === -1 ? 1 : 0,
+          duration: 0.6,
+          ease: "power1.inOut",
+        });
+
+        gsap.to(hiddenNav, {
+          scale: self.direction === -1 ? 0 : 1,
+          transformOrigin: "bottom top",
+          stagger: 0.05,
+          duration: 0.2,
+          delay: 0.25,
+          ease: "power3.out",
+        });
+
+        tlTopNavScramble.to(navLinksEach, {
+          duration: 1.5,
+          scrambleText: {
+            text: "{original}",
+            chars: "abcdefghijklmnopqrstuvwxyz",
+          },
+        });
+      }
+    },
+  });
+
+
+
+
+
 
 }
 
