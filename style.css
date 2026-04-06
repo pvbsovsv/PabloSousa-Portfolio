@@ -53,6 +53,11 @@ header {
   color: white;
 }
 
+.top-nav-container > a {
+  color: white;
+  text-decoration: none;
+}
+
 .top-nav-container {
   width: 100%;
   display: flex;

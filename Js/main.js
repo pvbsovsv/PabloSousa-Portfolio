@@ -390,6 +390,17 @@ function desktop() {
     });
   });
 
+  //contact button 
+
+
+const contactButton = document.querySelector(".contact-btn-container").addEventListener("click", () => {
+
+  
+
+})
+
+
+
   //clock function
 
   weAreClosed();
