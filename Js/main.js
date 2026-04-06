@@ -547,25 +547,6 @@ gsap.set(hiddenNav, {
     },
   });
 
-  //Scroll To
-
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const target = link.getAttribute("href");
-
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-          y: target,
-          offsetY: 30,
-          autoKill: true,
-        },
-        ease: "power2.inOut",
-      });
-    });
-  });
 
 
 
