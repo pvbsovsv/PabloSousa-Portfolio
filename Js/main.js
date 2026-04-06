@@ -420,18 +420,6 @@ gsap.set(hiddenNav, {
     scale: 0,
   });
 
-  //scramble text on load page
-
-  const tlTopNavScramble = gsap.timeline();
-
-  tlTopNavScramble.to(navLinksEach, {
-    duration: 1.5,
-    scrambleText: {
-      text: "{original}",
-      chars: "abcdefghijklmnopqrstuvwxyz",
-    },
-  });
-
   //scroll trigger global listener on scroll
 
   let lastDirectionGlobal = 0;
